@@ -6,6 +6,8 @@ https://docs.djangoproject.com/en/1.6/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
+
+# from hello_project import settings
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -37,6 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'south',
+    'jabbalib',
+    'hello',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,12 +68,24 @@ DATABASES = {
     }
 }
 
+#DATABASES = {
+#   'default': {
+#       'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#       'NAME': 'hello',                      # Or path to database file if using sqlite3.
+#       # The following settings are not used with sqlite3:
+#       'USER': '...',
+#       'PASSWORD': '...',
+#       'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+#       'PORT': '',                      # Set to empty string for default.
+#   }
+#}
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'CET'
 
 USE_I18N = True
 
@@ -81,3 +98,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Jabba Laci
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+FORMAT_MODULE_PATH = 'hello_project.formats'

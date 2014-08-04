@@ -1,0 +1,22 @@
+{% extends "hello/layout.html" %}
+{% load jabbalib_extras %}
+
+{% block body %}
+
+<h1>Hello</h1>
+
+<p>
+{{ name }} in md5: {{ md5 }}
+</p>
+
+<p>
+list: {{ list }}
+</p>
+
+<p>
+list as JSON: {{ list|jsonify }}
+</p>
+
+<a href="{% url 'hello:about' %}">About</a>
+
+{% endblock body %}
